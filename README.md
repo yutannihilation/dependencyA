@@ -1,9 +1,9 @@
 # dependencyA
 
-This package uses magrittr's `extract()` with `Depends` directive, which causes this error:
+This package uses magrittr's `extract()` with `Imports` directive, which is ok when doing this:
 
 ```r
-devtools::install_github("yutannihilation/dependencyA")
+devtools::install_github("yutannihilation/dependencyA@use-imports")
 
 library("dependencyA")
 
@@ -13,6 +13,6 @@ take1(1:10)
 # a package that has another extract()
 library(tidyr)
 
-# this fails
+# this still works
 take1(1:10)
 ```
